@@ -22,6 +22,7 @@ import Evaluate from "./nodesType/Evaluate";
 import Package from "./nodesType/Package";
 import Containerise from "./nodesType/Containerise";
 import Deploy from "./nodesType/Deploy";
+import Serve from "./nodesType/Serve";
 import "reactflow/dist/style.css";
 
 const nodeTypes = {
@@ -39,6 +40,7 @@ const nodeTypes = {
   packageNode: Package,
   containeriseNode: Containerise,
   deployNode: Deploy,
+  serveNode: Serve,
 };
 
 const customStyle = {
@@ -214,7 +216,7 @@ const initialNodes = [
   {
     id: "16",
     type: "serveNode",
-    position: { x: -50, y: 850 },
+    position: { x: -50, y: 650 },
     className: "serve",
   },
 ];
@@ -234,8 +236,8 @@ const initialEdges = [
   { id: "12-13", source: "12", target: "13" },
   { id: "13-14", source: "13", target: "14" },
   { id: "14-15", source: "14", target: "15" },
+  { id: "15-16", source: "15", target: "16" },
 ];
-
 export default function App() {
   return (
     <ReactFlow
