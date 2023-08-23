@@ -19,6 +19,7 @@ import GitFour from "./nodesType/GitFour";
 import Train from "./nodesType/Train";
 import ValidateA from "./nodesType/ValidateA";
 import Evaluate from "./nodesType/Evaluate";
+import Package from "./nodesType/Package";
 import "reactflow/dist/style.css";
 
 const nodeTypes = {
@@ -33,6 +34,7 @@ const nodeTypes = {
   trainNode: Train,
   validateANode: ValidateA,
   evaluateNode: Evaluate,
+  packageNode: Package,
 };
 
 const customStyle = {
@@ -190,7 +192,7 @@ const initialNodes = [
   {
     id: "13",
     type: "packageNode",
-    position: { x: 150, y: 1250 },
+    position: { x: -50, y: 1250 },
     className: "package",
   },
 ];
@@ -207,6 +209,7 @@ const initialEdges = [
   { id: "9-10", source: "9", target: "10" },
   { id: "10-11", source: "10", target: "11" },
   { id: "11-12", source: "11", target: "12" },
+  { id: "12-13", source: "12", target: "13" },
 ];
 
 export default function App() {
