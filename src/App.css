@@ -111,3 +111,21 @@
 .containerise div:nth-child(3){
   top: 30%;
 }
+.img div:nth-child(1){
+  left: 10%;
+}
+.img div:nth-child(2){
+  left: 40%;
+}
+.img div:nth-child(3){
+  left: 80%;
+}
+.img div:nth-child(4){
+  top: 10%;
+}
+.img div:nth-child(5){
+  top: 40%;
+}
+.img div:nth-child(6){
+  top: 80%;
+}

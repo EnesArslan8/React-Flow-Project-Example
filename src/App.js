@@ -1,12 +1,6 @@
 import React from "react";
 import ReactFlow, { Panel, MarkerType } from "reactflow";
-import { BsDatabase, BsArrowRight } from "react-icons/bs";
-import { LuAppWindow } from "react-icons/lu";
-import { TfiLineDotted } from "react-icons/tfi";
-import { SiEventstore } from "react-icons/si";
-import { GrValidate } from "react-icons/gr";
-import { MdOutlineCleaningServices } from "react-icons/md";
-import { PiUsbLight } from "react-icons/pi";
+import { BsDatabase } from "react-icons/bs";
 import "./App.css";
 import ThreeInputNode from "./nodesType/ThreeConnect";
 import StandardiseThree from "./nodesType/StandardiseThree";
@@ -23,7 +17,10 @@ import Package from "./nodesType/Package";
 import Containerise from "./nodesType/Containerise";
 import Deploy from "./nodesType/Deploy";
 import Serve from "./nodesType/Serve";
+import Application from "./nodesType/Application";
+import DataEngineer from "./nodesType/DataEngineer";
 import "reactflow/dist/style.css";
+
 
 const nodeTypes = {
   threeInputNode: ThreeInputNode,
@@ -41,6 +38,8 @@ const nodeTypes = {
   containeriseNode: Containerise,
   deployNode: Deploy,
   serveNode: Serve,
+  applicationNode: Application,
+  dataEngineerNode: DataEngineer
 };
 
 const customStyle = {
@@ -219,6 +218,18 @@ const initialNodes = [
     position: { x: -50, y: 650 },
     className: "serve",
   },
+  {
+    id: "16",
+    type: "applicationNode",
+    position: { x: -50, y: 650 },
+    className: "application",
+  },
+  {
+    id: "17",
+    type: "dataEngineerNode",
+    position: { x: 250, y: 650 },
+    className: "img",
+  },
 ];
 
 const initialEdges = [
@@ -237,6 +248,12 @@ const initialEdges = [
   { id: "13-14", source: "13", target: "14" },
   { id: "14-15", source: "14", target: "15" },
   { id: "15-16", source: "15", target: "16" },
+  { id: "16-1", source: "16", target: "1" },
+  { id: "17-2", source: "17", target: "2" ,sourceHandle:'f',targetHandle:'b'},
+  { id: "17-3", source: "17", target: "3",sourceHandle:'a' ,targetHandle:'b'},
+  { id: "17-4", source: "17", target: "4",sourceHandle:'b' ,targetHandle:'b'},
+  { id: "17-5", source: "17", target: "5",sourceHandle:'c' ,targetHandle:'a'},
+  { id: "17-6", source: "17", target: "6",sourceHandle:'d' ,targetHandle:'b'},
 ];
 export default function App() {
   return (
