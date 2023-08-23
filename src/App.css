@@ -28,8 +28,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: auto !important;
-  width: auto !important;
+  height: 150px !important;
+  width: 100px !important;
   flex-direction: column;
 }
 .threeContainer{
@@ -53,8 +53,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: auto !important;
-  width: auto !important;
+  height: 150px !important;
+  width: 100px !important;
   flex-direction: column;
 }
 .fourContainer{
@@ -95,4 +95,10 @@
 }
 .train div:nth-child(4){
   top: 10%;
+}
+.validateA div:nth-child(4){
+  left: 30%;
+}
+.validateA div:nth-child(3){
+  left: 70%;
 }

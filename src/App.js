@@ -17,6 +17,7 @@ import FeaturesThree from "./nodesType/FeaturesThree";
 import SelectFeaturesThree from "./nodesType/SelectFeaturesThree";
 import GitFour from "./nodesType/GitFour";
 import Train from "./nodesType/Train";
+import ValidateA from "./nodesType/ValidateA";
 import "reactflow/dist/style.css";
 
 const nodeTypes = {
@@ -29,6 +30,7 @@ const nodeTypes = {
   selectFeatureNode: SelectFeaturesThree,
   gitNode: GitFour,
   trainNode: Train,
+  validateANode: ValidateA,
 };
 
 const customStyle = {
@@ -171,6 +173,18 @@ const initialNodes = [
     position: { x: 550, y: 1250 },
     className: "train",
   },
+  {
+    id: "11",
+    type: "validateANode",
+    position: { x: 350, y: 1250 },
+    className: "validateA",
+  },
+  {
+    id: "12",
+    type: "evaluateNode",
+    position: { x: 150, y: 1250 },
+    className: "evaluate",
+  },
 ];
 
 const initialEdges = [
@@ -183,6 +197,7 @@ const initialEdges = [
   { id: "7-8", source: "7", target: "8" },
   { id: "8-9", source: "8", target: "9" },
   { id: "9-10", source: "9", target: "10" },
+  { id: "10-11", source: "10", target: "11" },
 ];
 
 export default function App() {
