@@ -102,3 +102,6 @@
 .validateA div:nth-child(3){
   left: 70%;
 }
+.evaluate div:nth-child(3){
+  top: 0%;
+}
