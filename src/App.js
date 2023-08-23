@@ -19,6 +19,7 @@ import Deploy from "./nodesType/Deploy";
 import Serve from "./nodesType/Serve";
 import Application from "./nodesType/Application";
 import DataEngineer from "./nodesType/DataEngineer";
+import Store from "./nodesType/Store";
 import "reactflow/dist/style.css";
 
 
@@ -39,7 +40,8 @@ const nodeTypes = {
   deployNode: Deploy,
   serveNode: Serve,
   applicationNode: Application,
-  dataEngineerNode: DataEngineer
+  dataEngineerNode: DataEngineer,
+  storeNode: Store
 };
 
 const customStyle = {
@@ -107,7 +109,7 @@ const edgeOptions = {
 const initialNodes = [
   {
     id: "1",
-    position: { x: 0, y: 140 },
+    position: { x: -150, y: 140 },
     className: "dataSource",
     data: {
       label: (
@@ -124,7 +126,7 @@ const initialNodes = [
   },
   {
     id: "2",
-    position: { x: 300, y: 140 },
+    position: { x: 100, y: 140 },
     type: "ingestThree",
     // targetPosition: "left",
     className: "ingest",
@@ -230,11 +232,18 @@ const initialNodes = [
     position: { x: 250, y: 650 },
     className: "img",
   },
+  {
+    id: "18",
+    type: "storeNode",
+    position: { x: 300, y: 140 },
+    className: "store",
+  },
 ];
 
 const initialEdges = [
   { id: "1-2", source: "1", target: "2" },
-  { id: "2-3", source: "2", target: "3" },
+  { id: "2-18", source: "2", target: "18" },
+  { id: "18-3", source: "18", target: "3" },
   { id: "3-4", source: "3", target: "4" },
   { id: "4-5", source: "4", target: "5" },
   { id: "5-6", source: "5", target: "6" },
@@ -249,11 +258,13 @@ const initialEdges = [
   { id: "14-15", source: "14", target: "15" },
   { id: "15-16", source: "15", target: "16" },
   { id: "16-1", source: "16", target: "1" },
-  { id: "17-2", source: "17", target: "2" ,sourceHandle:'f',targetHandle:'b'},
-  { id: "17-3", source: "17", target: "3",sourceHandle:'a' ,targetHandle:'b'},
-  { id: "17-4", source: "17", target: "4",sourceHandle:'b' ,targetHandle:'b'},
-  { id: "17-5", source: "17", target: "5",sourceHandle:'c' ,targetHandle:'a'},
-  { id: "17-6", source: "17", target: "6",sourceHandle:'d' ,targetHandle:'b'},
+  { id: "17-2", source: "17", target: "2",sourceHandle:'f' ,targetHandle:'b'},
+  { id: "17-18", source: "17", target: "18",sourceHandle:'a' ,targetHandle:'a'},
+  { id: "17-3", source: "17", target: "3",sourceHandle:'b' ,targetHandle:'b'},
+  { id: "17-4", source: "17", target: "4",sourceHandle:'c' ,targetHandle:'b'},
+  { id: "17-5", source: "17", target: "5",sourceHandle:'d' ,targetHandle:'a'},
+  { id: "17-6", source: "17", target: "6",sourceHandle:'e' ,targetHandle:'b'},
+  
 ];
 export default function App() {
   return (
