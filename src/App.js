@@ -20,6 +20,8 @@ import Train from "./nodesType/Train";
 import ValidateA from "./nodesType/ValidateA";
 import Evaluate from "./nodesType/Evaluate";
 import Package from "./nodesType/Package";
+import Containerise from "./nodesType/Containerise";
+import Deploy from "./nodesType/Deploy";
 import "reactflow/dist/style.css";
 
 const nodeTypes = {
@@ -35,6 +37,8 @@ const nodeTypes = {
   validateANode: ValidateA,
   evaluateNode: Evaluate,
   packageNode: Package,
+  containeriseNode: Containerise,
+  deployNode: Deploy,
 };
 
 const customStyle = {
@@ -195,6 +199,24 @@ const initialNodes = [
     position: { x: -50, y: 1250 },
     className: "package",
   },
+  {
+    id: "14",
+    type: "containeriseNode",
+    position: { x: -50, y: 1050 },
+    className: "containerise",
+  },
+  {
+    id: "15",
+    type: "deployNode",
+    position: { x: -50, y: 850 },
+    className: "deploy",
+  },
+  {
+    id: "16",
+    type: "serveNode",
+    position: { x: -50, y: 850 },
+    className: "serve",
+  },
 ];
 
 const initialEdges = [
@@ -210,6 +232,8 @@ const initialEdges = [
   { id: "10-11", source: "10", target: "11" },
   { id: "11-12", source: "11", target: "12" },
   { id: "12-13", source: "12", target: "13" },
+  { id: "13-14", source: "13", target: "14" },
+  { id: "14-15", source: "14", target: "15" },
 ];
 
 export default function App() {
