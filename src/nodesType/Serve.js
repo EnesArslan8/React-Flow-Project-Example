@@ -4,9 +4,9 @@ import { PiPlugsFill } from "react-icons/pi";
 
 function Serve() {
   return (
-    <div className="fourContainer">
+    <div className="container">
       <Handle type="target" position={Position.Bottom} />
-      <div className="fourContent">
+      <div className="content">
         <div>
           <PiPlugsFill className="icon" />
         </div>

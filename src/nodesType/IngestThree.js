@@ -5,9 +5,9 @@ import { TfiLineDotted } from "react-icons/tfi";
 
 const StandardiseThree = () => {
   return (
-    <div className="threeContainer">
+    <div className="container">
       <Handle type="target" position={Position.Left} />
-      <div className="threeContent">
+      <div className="content">
         <div style={{ display: "inline-flex", flexDirection: "column" }}>
           <BsArrowRight className="icon rightArrow"/>
           <TfiLineDotted className="icon"/>

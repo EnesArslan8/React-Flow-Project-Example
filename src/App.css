@@ -17,7 +17,7 @@
 .react-flow__handle.connectionindicator {
   margin: .2rem 0;
 }
-.threeContent{
+.content{
   background-color: transparent !important;
   border: none !important;
   color: #fff !important;
@@ -28,43 +28,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 150px !important;
-  width: 100px !important;
+  height: 100% !important;
+  width: 100% !important;
   flex-direction: column;
 }
-.threeContainer{
-  display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
-  width: auto;
-  height: auto;
-  padding: 10px 20px;
-  background-color: red;
-  margin: 5px 10px;
-}
-.fourContent{
-  background-color: transparent !important;
-  border: none !important;
-  color: #fff !important;
-  font-size: 14px !important;
-  font-weight: 600 !important;
-  border-color: none  !important;
-  box-shadow: none !important;
+.container{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 150px !important;
-  width: 100px !important;
-  flex-direction: column;
-}
-.fourContainer{
-  display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
-  width: auto;
-  height: auto;
+  width: 100px;
+  height: 100px;
   padding: 10px 20px;
-  background-color: red;
   margin: 5px 10px;
 }
 .icon{
@@ -81,17 +55,129 @@
   height: 50px !important;
 } */
 .clean .react-flow__handle-left:nth-child(1){
-  
   top: 50% !important;
 }
 .clean div:nth-child(3){
-  top: 100%;
+  top: 70%;
+  left: 20%;
+}
+/* .git div:nth-child(3){
+  top: 30%;
+  right: 90%;
+} */
+.ingest div:nth-child(4){
+  visibility: hidden;
+}
+.store div:nth-child(2){
+  visibility: hidden;
+}
+.store div:nth-child(3){
+  visibility: hidden;
+}
+.validate div:nth-child(2){
+  visibility: hidden;
+}
+.validate div:nth-child(4){
+  visibility: hidden;
+}
+.clean div:nth-child(2){
+  visibility: hidden;
+}
+.clean div:nth-child(3){
+  visibility: hidden;
+}
+.standardise div:nth-child(2){
+  visibility: hidden;
+}
+.standardise div:nth-child(3){
+  visibility: hidden;
+}
+.curate div:nth-child(2){
+  visibility: hidden;
+}
+.curate div:nth-child(3){
+  visibility: hidden;
+}
+.features div:nth-child(2){
+  visibility: hidden;
+}
+.features div:nth-child(3){
+  visibility: hidden;
+}
+.selectFeatures div:nth-child(2){
+  visibility: hidden;
+}
+.selectFeatures div:nth-child(3){
+  visibility: hidden;
+}
+.git div:nth-child(2){
+  visibility: hidden;
 }
 .git div:nth-child(3){
-  left: 10%;
+  visibility: hidden;
+}
+.git div:nth-child(4){
+  visibility: hidden;
+}
+.train div:nth-child(2){
+  visibility: hidden;
+}
+.train div:nth-child(3){
+  visibility: hidden;
+}
+.train div:nth-child(4){
+  visibility: hidden;
+}
+.validateA div:nth-child(2){
+  visibility: hidden;
+}
+.validateA div:nth-child(3){
+  visibility: hidden;
+}
+.validateA div:nth-child(4){
+  visibility: hidden;
+}
+.evaluate div:nth-child(2){
+  visibility: hidden;
+}
+.evaluate div:nth-child(3){
+  visibility: hidden;
+}
+.evaluate div:nth-child(4){
+  visibility: hidden;
+}
+.package div:nth-child(2){
+  visibility: hidden;
+}
+.package div:nth-child(3){
+  visibility: hidden;
+}
+.containerise div:nth-child(2){
+  visibility: hidden;
+}
+.containerise div:nth-child(3){
+  visibility: hidden;
+}
+.deploy div:nth-child(2){
+  visibility: hidden;
+}
+.deploy div:nth-child(3){
+  visibility: hidden;
+}
+.application div:nth-child(2){
+  visibility: hidden;
+}
+.dataSource div:nth-child(2){
+  visibility: hidden;
+}
+/**/
+.git div:nth-child(3){
+  left: 40%;
+  top: 10%;
 }
 .git div:nth-child(4){
   top: 20%;
+  right: -70px;
 }
 .train div:nth-child(4){
   top: 10%;
@@ -112,59 +198,144 @@
   top: 30%;
 }
 .img div:nth-child(1){
-  left: 10%;
+  left: -80%;
+  top: -70px;
 }
 .img div:nth-child(2){
-  left: 40%;
+  left: 45%;
+  top: -70%;
 }
 .img div:nth-child(3){
   left: 80%;
+  top: -69px;
 }
 .img div:nth-child(4){
   top: 10%;
+  right: -130px;
 }
 .img div:nth-child(5){
   top: 40%;
+  right: -130px;
+
 }
 .img div:nth-child(6){
   top: 80%;
+  right: -110px;
 }
 .ml div:nth-child(1){
   top: 40%;
+  left: -92px;
 }
 .ml div:nth-child(2){
-  top: 70%;
+  top: 100%;
+  left: -20px;
 }
 .ml div:nth-child(3){
-  left: 20%;
+  left: -65%;
+  top: 140%;
 }
 .ml div:nth-child(4){
   left: 40%;
+  top: 240%;
 }
 .ml div:nth-child(5){
-  left: 65%;
+  left: 160%;
+  top: 240%;
+
 }
 .ml div:nth-child(6){
-  left: 80%;
+  left: 150%;
+  top: 140%;
+
 }
 .ml div:nth-child(7){
   top: 60%;
+  right: -30px;
 }
 .dataScientist div:nth-child(1){
   top: 30%;
+  right: -85%;
 }
 .dataScientist div:nth-child(2){
   top: 45%;
+  right: -85%;
 }
 .dataScientist div:nth-child(3){
-  top: 90%;
+  top: 100%;
+  right: -70%;
 }
 .dataScientist div:nth-child(4){
-  left: 60%;
+  left: 58%;
+  top: 140%;
 }
 .dataScientist div:nth-child(5){
   left: 30%;
+  top: 135%;
 }
 .dataScientist div:nth-child(6){
   left: 10%;
+  top:  60% ;
+}
+.noVisible{
+  visibility: none;
+}
+.noVisible  .react-flow__handle.connectionindicator{
+  visibility: hidden !important ;
+}
+g:nth-child(18) path{
+  stroke: #fefe32 !important;
+}
+g:nth-child(19) path{
+  stroke: #fefe32 !important;
+}
+g:nth-child(20) path{
+  stroke: #fefe32 !important;
+}
+g:nth-child(21) path{
+  stroke: #fefe32 !important;
+}
+g:nth-child(22) path{
+  stroke: #fefe32 !important;
+}
+g:nth-child(23) path{
+  stroke: #fefe32 !important;
+}
+g:nth-child(24) path{
+  stroke: #00fefe !important;
+}
+g:nth-child(25) path{
+  stroke: #00fefe !important;
+}
+g:nth-child(26) path{
+  stroke: #00fefe !important;
+}
+g:nth-child(27) path{
+  stroke: #00fefe !important;
+}
+g:nth-child(28) path{
+  stroke: #00fefe !important;
+}
+g:nth-child(29) path{
+  stroke: #00fefe !important;
+}
+g:nth-child(30) path{
+  stroke: #00fefe !important;
+}
+g:nth-child(31) path{
+  stroke: #fe3398 !important;
+}
+g:nth-child(32) path{
+  stroke: #fe3398 !important;
+}
+g:nth-child(33) path{
+  stroke: #fe3398 !important;
+}
+g:nth-child(34) path{
+  stroke: #fe3398 !important;
+}
+g:nth-child(35) path{
+  stroke: #fe3398 !important;
+}
+g:nth-child(36) path{
+  stroke: #fe3398 !important;
 }

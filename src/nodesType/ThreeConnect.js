@@ -4,14 +4,14 @@ import { MdOutlineCleaningServices } from "react-icons/md";
 
 const ThreeInputNode = () => {
   return (
-    <div className="threeContainer">
-      <Handle type="target" position={Position.Left} />
-      <div className="threeContent">
+    <div className="container">
+      <div className="content">
         <div>
           <MdOutlineCleaningServices className="icon"/>
         </div>
         <p className="name">Clean</p>
       </div>
+      <Handle type="target" position={Position.Left} />
       <Handle type="target" position={Position.Left } id="b" />
       <Handle type="source" position={Position.Bottom} id="a" />
       

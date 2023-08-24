@@ -5,7 +5,7 @@ import scientist from "../img/scientist.png";
 
 function MLEngineer() {
   return (
-    <div className="fourContainer">
+    <div className="container">
       <Handle type="source" position={Position.Left} id="a" />
       <Handle type="source" position={Position.Left} id="b" />
       <Handle type="source" position={Position.Bottom} id="c" />
@@ -14,9 +14,9 @@ function MLEngineer() {
       <Handle type="source" position={Position.Bottom} id="f" />
       <Handle type="source" position={Position.Right} id="g" />
 
-      <div>
-        <img style={{ width: "200px" }} src={scientist} />
-        <p>ML Engineer</p>
+      <div className="content">
+        <p style={{fontSize:'24px',whiteSpace:'nowrap'}}>ML Engineer</p>
+        <img style={{ width: "400px" }} src={scientist} />
       </div>
     </div>
   );

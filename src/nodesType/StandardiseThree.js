@@ -4,18 +4,18 @@ import {PiUsbLight} from 'react-icons/pi'
 
 const StandardiseThree = () => {
   return (
-    <div className="threeContainer">
-      <Handle
-        type="target"
-        position={Position.Top}
-        
-      />
-      <div className="threeContent">
+    <div className="container">
+      <div className="content">
         <div>
           <PiUsbLight className="icon"/>
         </div>
         <p className="name">Standardise</p>
       </div>
+      <Handle
+        type="target"
+        position={Position.Top}
+        
+      />
       <Handle
         type="target"
         position={Position.Left}

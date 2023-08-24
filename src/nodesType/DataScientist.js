@@ -5,7 +5,7 @@ import dataScientist from "../img/data-scientist.png";
 
 function DataScientist() {
   return (
-    <div className="fourContainer">
+    <div className="container">
       <Handle type="source" position={Position.Right} id="a" />
       <Handle type="source" position={Position.Right} id="b" />
       <Handle type="source" position={Position.Right} id="c" />
@@ -13,9 +13,9 @@ function DataScientist() {
       <Handle type="source" position={Position.Bottom} id="e" />
       <Handle type="source" position={Position.Bottom} id="f" />
 
-      <div>
-        <img style={{ width: "200px" }} src={dataScientist} />
-        <p>Data Scientist</p>
+      <div className="content">
+        <p style={{fontSize:'24px',whiteSpace:'nowrap',backgroundColor:'rgba(0,0,0,.3)',padding:'.2rem .5rem'}}>Data Scientist</p>
+        <img style={{ width: "400px" }} src={dataScientist} />
       </div>
     </div>
   )

@@ -1,5 +1,10 @@
-import React from "react";
-import ReactFlow, { Panel, MarkerType } from "reactflow";
+import React, { useEffect, useState } from "react";
+import ReactFlow, {
+  Panel,
+  MarkerType,
+  Controls,
+  FitBoundsOptions,
+} from "reactflow";
 import { BsDatabase } from "react-icons/bs";
 import "./App.css";
 import ThreeInputNode from "./nodesType/ThreeConnect";
@@ -22,8 +27,8 @@ import DataEngineer from "./nodesType/DataEngineer";
 import Store from "./nodesType/Store";
 import MLEngineer from "./nodesType/MLEngineer";
 import DataScientist from "./nodesType/DataScientist";
+import DataSource from "./nodesType/DataSource";
 import "reactflow/dist/style.css";
-
 
 const nodeTypes = {
   threeInputNode: ThreeInputNode,
@@ -44,8 +49,9 @@ const nodeTypes = {
   applicationNode: Application,
   dataEngineerNode: DataEngineer,
   storeNode: Store,
-  mlEngineerNode:MLEngineer,
-  dataScientistNode:DataScientist
+  mlEngineerNode: MLEngineer,
+  dataScientistNode: DataScientist,
+  dataSourceNode:DataSource
 };
 
 const customStyle = {
@@ -102,51 +108,50 @@ const versusStyle = {
 };
 const edgeOptions = {
   animated: true,
+  type:'straight',
   style: {
     stroke: "white",
   },
   markerEnd: {
     fontSize: "20px",
-    type: MarkerType.Arrow,
+    // color:'000',
+    type: MarkerType.ArrowClosed
   },
 };
 const initialNodes = [
   {
     id: "1",
-    position: { x: -150, y: 140 },
+    position: { x: -200, y: 210 },
+    type:'dataSourceNode',
     className: "dataSource",
+  },
+  {
+    id: "20000",
+    position: { x: -100, y: 100 },
+    className: "noVisible",
     data: {
       label: (
-        <div>
-          <div>
-            <BsDatabase className="icon"/>
-          </div>
-          <p>Data Source</p>
+        <div className="noVisible">
+          
         </div>
       ),
-    },
-    sourcePosition: "right",
-    targetPosition: "bottom",
+    }
   },
   {
     id: "2",
-    position: { x: 100, y: 140 },
+    position: { x: 300, y: 210 },
     type: "ingestThree",
-    // targetPosition: "left",
     className: "ingest",
-    // sourcePosition: "right",
   },
   {
     id: "3",
-    position: { x: 500, y: 140 },
-    // targetPosition: "left",
+    position: { x: 1300, y: 210 },
     className: "validate",
     type: "validateNode",
-    // sourcePosition: "right",
   },
   {
     id: "4",
-    position: { x: 750, y: 140 },
+    position: { x: 1800, y: 210 },
     // targetPosition: "left",
     className: "clean",
     // sourcePosition: "bottom",
@@ -155,105 +160,105 @@ const initialNodes = [
   {
     id: "5",
     type: "standardiseNode",
-    position: { x: 750, y: 450 },
+    position: { x: 1800, y: 410 },
     className: "standardise",
   },
   {
     id: "6",
     type: "curateThree",
-    position: { x: 750, y: 650 },
+    position: { x: 1800, y: 610 },
     className: "curate",
   },
   {
     id: "7",
     type: "featuresThree",
-    position: { x: 750, y: 850 },
+    position: { x: 1800, y: 810 },
     className: "features",
   },
   {
     id: "8",
     type: "selectFeatureNode",
-    position: { x: 750, y: 1050 },
+    position: { x: 1800, y: 1010 },
     className: "selectFeatures",
   },
   {
     id: "9",
     type: "gitNode",
-    position: { x: 750, y: 1250 },
+    position: { x: 1800, y: 1210 },
     className: "git",
   },
   {
     id: "10",
     type: "trainNode",
-    position: { x: 550, y: 1250 },
+    position: { x: 1300, y: 1210 },
     className: "train",
   },
   {
     id: "11",
     type: "validateANode",
-    position: { x: 350, y: 1250 },
+    position: { x: 800, y: 1210 },
     className: "validateA",
   },
   {
     id: "12",
     type: "evaluateNode",
-    position: { x: 150, y: 1250 },
+    position: { x: 300, y: 1210 },
     className: "evaluate",
   },
   {
     id: "13",
     type: "packageNode",
-    position: { x: -50, y: 1250 },
+    position: { x: -200, y: 1210 },
     className: "package",
   },
   {
     id: "14",
     type: "containeriseNode",
-    position: { x: -50, y: 1050 },
+    position: { x: -200, y: 960 },
     className: "containerise",
   },
   {
     id: "15",
     type: "deployNode",
-    position: { x: -50, y: 850 },
+    position: { x: -200, y: 710 },
     className: "deploy",
   },
-  {
-    id: "16",
-    type: "serveNode",
-    position: { x: -50, y: 650 },
-    className: "serve",
-  },
+  // {
+  //   id: "16",
+  //   type: "serveNode",
+  //   position: { x: 500, y: 410 },
+  //   className: "serve",
+  // },
   {
     id: "16",
     type: "applicationNode",
-    position: { x: -50, y: 650 },
+    position: { x: -200, y: 460 },
     className: "application",
   },
   {
     id: "17",
     type: "dataEngineerNode",
-    position: { x: 250, y: 450 },
+    position: { x: 800, y: 550 },
     className: "img",
   },
   {
     id: "18",
     type: "storeNode",
-    position: { x: 300, y: 140 },
+    position: { x: 800, y: 210 },
     className: "store",
   },
   {
-    id:'19',
-    type:'mlEngineerNode',
-    position:{x:200 , y:900},
-    className:'ml'
+    id: "19",
+    type: "mlEngineerNode",
+    position: { x: 400, y: 800 },
+    className: "ml",
   },
   {
-    id:'20',
-    type:'dataScientistNode',
-    position:{x:400 , y:700},
-    className:'dataScientist'
-  }
+    id: "20",
+    type: "dataScientistNode",
+    position: { x: 1250, y: 800 },
+    className: "dataScientist",
+  },
 ];
 
 const initialEdges = [
@@ -274,28 +279,161 @@ const initialEdges = [
   { id: "14-15", source: "14", target: "15" },
   { id: "15-16", source: "15", target: "16" },
   { id: "16-1", source: "16", target: "1" },
-  { id: "17-2", source: "17", target: "2",sourceHandle:'f' ,targetHandle:'b'},
-  { id: "17-18", source: "17", target: "18",sourceHandle:'a' ,targetHandle:'a'},
-  { id: "17-3", source: "17", target: "3",sourceHandle:'b' ,targetHandle:'b'},
-  { id: "17-4", source: "17", target: "4",sourceHandle:'c' ,targetHandle:'b'},
-  { id: "17-5", source: "17", target: "5",sourceHandle:'d' ,targetHandle:'a'},
-  { id: "17-6", source: "17", target: "6",sourceHandle:'e' ,targetHandle:'b'},
-  { id: "19-9", source: "19", target: "9",sourceHandle:'g' ,targetHandle:'b'},
-  { id: "19-10", source: "19", target: "10",sourceHandle:'f' ,targetHandle:'b'},
-  { id: "19-11", source: "19", target: "11",sourceHandle:'e' ,targetHandle:'a'},
-  { id: "19-12", source: "19", target: "12",sourceHandle:'d' ,targetHandle:'b'},
-  { id: "19-13", source: "19", target: "13",sourceHandle:'c' ,targetHandle:'a'},
-  { id: "19-14", source: "19", target: "14",sourceHandle:'b' ,targetHandle:'a'},
-  { id: "19-15", source: "19", target: "15",sourceHandle:'a' ,targetHandle:'b'},
-  { id: "20-7", source: "20", target: "7",sourceHandle:'a' ,targetHandle:'b'},
-  { id: "20-8", source: "20", target: "8",sourceHandle:'b' ,targetHandle:'b'},
-  { id: "20-9", source: "20", target: "9",sourceHandle:'c' ,targetHandle:'c'},
-  { id: "20-10", source: "20", target: "10",sourceHandle:'d' ,targetHandle:'c'},
-  { id: "20-11", source: "20", target: "11",sourceHandle:'e' ,targetHandle:'c'},
-  { id: "20-12", source: "20", target: "12",sourceHandle:'f' ,targetHandle:'c'},
-  
+  {
+    id: "17-2",
+    source: "17",
+    target: "2",
+    sourceHandle: "f",
+    targetHandle: "b",
+  },
+  {
+    id: "17-18",
+    source: "17",
+    target: "18",
+    sourceHandle: "a",
+    targetHandle: "a",
+  },
+  {
+    id: "17-3",
+    source: "17",
+    target: "3",
+    sourceHandle: "b",
+    targetHandle: "b",
+  },
+  {
+    id: "17-4",
+    source: "17",
+    target: "4",
+    sourceHandle: "c",
+    targetHandle: "b",
+  },
+  {
+    id: "17-5",
+    source: "17",
+    target: "5",
+    sourceHandle: "d",
+    targetHandle: "a",
+  },
+  {
+    id: "17-6",
+    source: "17",
+    target: "6",
+    sourceHandle: "e",
+    targetHandle: "b",
+  },
+  {
+    id: "19-9",
+    source: "19",
+    target: "9",
+    sourceHandle: "g",
+    targetHandle: "b",
+  },
+  {
+    id: "19-10",
+    source: "19",
+    target: "10",
+    sourceHandle: "f",
+    targetHandle: "b",
+    data:{className:'lightBlue'}
+  },
+  {
+    id: "19-11",
+    source: "19",
+    target: "11",
+    sourceHandle: "e",
+    targetHandle: "a",
+    data:{className:'lightBlue'}
+  },
+  {
+    id: "19-12",
+    source: "19",
+    target: "12",
+    sourceHandle: "d",
+    targetHandle: "b",
+  },
+  {
+    id: "19-13",
+    source: "19",
+    target: "13",
+    sourceHandle: "c",
+    targetHandle: "a",
+  },
+  {
+    id: "19-14",
+    source: "19",
+    target: "14",
+    sourceHandle: "b",
+    targetHandle: "a",
+  },
+  {
+    id: "19-15",
+    source: "19",
+    target: "15",
+    sourceHandle: "a",
+    targetHandle: "b",
+  },
+  {
+    id: "20-7",
+    source: "20",
+    target: "7",
+    sourceHandle: "a",
+    targetHandle: "b",
+  },
+  {
+    id: "20-8",
+    source: "20",
+    target: "8",
+    sourceHandle: "b",
+    targetHandle: "b",
+  },
+  {
+    id: "20-9",
+    source: "20",
+    target: "9",
+    sourceHandle: "c",
+    targetHandle: "c",
+  },
+  {
+    id: "20-10",
+    source: "20",
+    target: "10",
+    sourceHandle: "d",
+    targetHandle: "c",
+  },
+  {
+    id: "20-11",
+    source: "20",
+    target: "11",
+    sourceHandle: "e",
+    targetHandle: "c",
+  },
+  {
+    id: "20-12",
+    source: "20",
+    target: "12",
+    sourceHandle: "f",
+    targetHandle: "c",
+  },
 ];
 export default function App() {
+  const [pageload, IsPageLoad] = useState(true);
+  useEffect(() => {
+    if (pageload) {
+      console.log("sayfa load oldu");
+      // let sa=document.querySelector(".react-flow__controls > button");
+      handleClick();
+    }
+  }, []);
+  const handleClick = () => {
+    setTimeout(() => {
+      let findElement = document.querySelector(
+        ".react-flow__controls > button"
+      );
+      if (findElement) findElement.click();
+      console.log(findElement);
+    }, 500);
+  };
+
   return (
     <ReactFlow
       nodes={initialNodes}
@@ -314,6 +452,7 @@ export default function App() {
           </div>
         </Panel>
       </div>
+      <Controls showZoom={false} />
     </ReactFlow>
   );
 }
