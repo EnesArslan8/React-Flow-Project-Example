@@ -129,3 +129,24 @@
 .img div:nth-child(6){
   top: 80%;
 }
+.ml div:nth-child(1){
+  top: 40%;
+}
+.ml div:nth-child(2){
+  top: 70%;
+}
+.ml div:nth-child(3){
+  left: 20%;
+}
+.ml div:nth-child(4){
+  left: 40%;
+}
+.ml div:nth-child(5){
+  left: 65%;
+}
+.ml div:nth-child(6){
+  left: 80%;
+}
+.ml div:nth-child(7){
+  top: 60%;
+}

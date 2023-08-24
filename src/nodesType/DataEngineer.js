@@ -2,8 +2,6 @@ import React, { memo } from "react";
 import { Handle, Position } from "reactflow";
 
 import dataManagement from "../img/data-management.png";
-// import dataScientist from "./img/data-scientist.png";
-// import scientist from "./img/scientist.png";
 function DataEngineer() {
   return (
     <div className="fourContainer">

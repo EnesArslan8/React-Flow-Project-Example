@@ -11,7 +11,7 @@ function ValidateA() {
         </div>
         <p className="name">Validate</p>
       </div>
-      <Handle type="target" position={Position.Top} />
+      <Handle type="target" position={Position.Top} id="c"/>
       <Handle type="target" position={Position.Top } id="a" />
       <Handle type="source" position={Position.Left} id="b" />
       

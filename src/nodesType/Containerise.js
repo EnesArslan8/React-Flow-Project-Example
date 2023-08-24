@@ -10,9 +10,9 @@ function Containerise() {
         <div>
           <RiShipLine className="icon" />
         </div>
-        <p className="name">Package</p>
+        <p className="name">Containerise</p>
       </div>
-      <Handle type="target" position={Position.Right} />
+      <Handle type="target" position={Position.Right} id="a" />
       <Handle type="source" position={Position.Top} />
     </div>
   );

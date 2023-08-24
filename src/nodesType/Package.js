@@ -12,8 +12,8 @@ function Package() {
       </div>
       <p className="name">Package</p>
     </div>
-    <Handle type="target" position={Position.Right} />
-    <Handle type="source" position={Position.Top } />
+    <Handle type="target" position={Position.Right} id="a"/>
+    <Handle type="source" position={Position.Top } id="b"/>
     
   </div>
   )

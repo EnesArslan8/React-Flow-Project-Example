@@ -12,8 +12,8 @@ function Deploy() {
         </div>
         <p className="name">Deploy</p>
       </div>
-      <Handle type="target" position={Position.Right} />
-      <Handle type="source" position={Position.Top} />
+      <Handle type="target" position={Position.Right} id="b"/>
+      <Handle type="source" position={Position.Top} id="a"/>
     </div>
   )
 }
