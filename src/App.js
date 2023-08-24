@@ -21,6 +21,7 @@ import Application from "./nodesType/Application";
 import DataEngineer from "./nodesType/DataEngineer";
 import Store from "./nodesType/Store";
 import MLEngineer from "./nodesType/MLEngineer";
+import DataScientist from "./nodesType/DataScientist";
 import "reactflow/dist/style.css";
 
 
@@ -43,7 +44,8 @@ const nodeTypes = {
   applicationNode: Application,
   dataEngineerNode: DataEngineer,
   storeNode: Store,
-  mlEngineerNode:MLEngineer
+  mlEngineerNode:MLEngineer,
+  dataScientistNode:DataScientist
 };
 
 const customStyle = {
@@ -231,7 +233,7 @@ const initialNodes = [
   {
     id: "17",
     type: "dataEngineerNode",
-    position: { x: 250, y: 650 },
+    position: { x: 250, y: 450 },
     className: "img",
   },
   {
@@ -245,6 +247,12 @@ const initialNodes = [
     type:'mlEngineerNode',
     position:{x:200 , y:900},
     className:'ml'
+  },
+  {
+    id:'20',
+    type:'dataScientistNode',
+    position:{x:400 , y:700},
+    className:'dataScientist'
   }
 ];
 
@@ -279,6 +287,12 @@ const initialEdges = [
   { id: "19-13", source: "19", target: "13",sourceHandle:'c' ,targetHandle:'a'},
   { id: "19-14", source: "19", target: "14",sourceHandle:'b' ,targetHandle:'a'},
   { id: "19-15", source: "19", target: "15",sourceHandle:'a' ,targetHandle:'b'},
+  { id: "20-7", source: "20", target: "7",sourceHandle:'a' ,targetHandle:'b'},
+  { id: "20-8", source: "20", target: "8",sourceHandle:'b' ,targetHandle:'b'},
+  { id: "20-9", source: "20", target: "9",sourceHandle:'c' ,targetHandle:'c'},
+  { id: "20-10", source: "20", target: "10",sourceHandle:'d' ,targetHandle:'c'},
+  { id: "20-11", source: "20", target: "11",sourceHandle:'e' ,targetHandle:'c'},
+  { id: "20-12", source: "20", target: "12",sourceHandle:'f' ,targetHandle:'c'},
   
 ];
 export default function App() {

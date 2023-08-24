@@ -11,7 +11,7 @@ function Train() {
         </div>
         <p className="name">Train</p>
       </div>
-      <Handle type="target" position={Position.Top} />
+      <Handle type="target" position={Position.Top} id="c"/>
       <Handle type="target" position={Position.Left } id="b" />
       <Handle type="source" position={Position.Left} id="a" />
       

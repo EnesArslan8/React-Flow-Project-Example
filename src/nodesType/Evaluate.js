@@ -12,7 +12,7 @@ function Evaluate() {
         </div>
         <p className="name">Evaluate</p>
       </div>
-      <Handle type="target" position={Position.Right} />
+      <Handle type="target" position={Position.Right} id="c"/>
       <Handle type="target" position={Position.Top } id="b" />
       <Handle type="source" position={Position.Left} id="a" />
       
