@@ -1,92 +1,43 @@
-<div style="border: 1px solid #e1e4e8; padding: 10px;">
-    <!-- README içeriğiniz burada yer alacak -->
-</div>
+# Non-Moving Algorithm User Guide
 
-<div style="border: 1px solid #e1e4e8; padding: 10px;">
-    <!-- README içeriğiniz burada yer alacak -->
-    # Proje Başlığı
-    Bu projede...
-</div>
+This project contains a non-moving algorithm developed using the React Flow library. This algorithm is created using custom node and custom edge components.
 
+## Project Description
 
+This project includes an example algorithm implemented using the React Flow library. The algorithm represents a process through nodes and the connections between them. However, nodes and connections remain stationary and do not move; they maintain a fixed layout.
 
+## Features
 
+- Custom node components have been created.
+- Custom node components have been created.
+- Nodes and connections cannot be edited, dragged, or repositioned.
+- The algorithm reflects a layout representing a specific process or associated data flow.
 
+## Installation
 
+1. In the project directory, run the following commands to install dependencies: npm install
 
+2. To start the project, use the following command: npm start
 
+This command will launch the project on a local server and display it in your browser.
 
+## Usage
 
+1. After launching the project in your browser, you will see a layout containing non-moving nodes and connections.
 
+2. By clicking on nodes or examining the connections, you can understand the process represented by the algorithm.
 
+## Screenshots
 
-# Getting Started with Create React App
+<img src='https://github.com/EnesArslan8/React-Flow-Project-Example/assets/89355402/5d4d632b-5258-4e36-9507-56338b7b623a' alt='' width="auto" height="auto"/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Contribution
 
-## Available Scripts
+If you'd like to contribute to the project's development, you can use the "Fork & Pull Request" method. Please don't forget to provide explanations for your changes.
 
-In the project directory, you can run:
+## References
 
-### `npm start`
+- [React Flow Dokümantasyon](https://reactflow.dev/)
+- [React Dokümantasyon](https://reactjs.org/docs/getting-started.html)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+A big thanks to everyone who contributed to this project!
